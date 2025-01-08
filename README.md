@@ -31,16 +31,9 @@ API keys must be securely stored and retrieved in your script, e.g., using Googl
 
 ---
 
-## How to Run the Application
 
-### 1. Run the Script
-Execute the script using Python:
 
-```bash
-python chatbot_with_gradio.py
-```
-
-### 2. Access the Gradio Interface
+###  Access the Gradio Interface
 After running the script, Gradio will provide a link, such as:
 
 ```text
