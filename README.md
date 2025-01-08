@@ -35,6 +35,8 @@ API keys must be securely stored and retrieved in your script, e.g., using Googl
 
 ###  Access the Gradio Interface
 After running the script, Gradio will provide a link, such as:
+* Running on public URL:*
+*  https://f855781982163b5e71.gradio.live
 
 ```text
 Running on local URL: http://127.0.0.1:7860
