@@ -45,6 +45,31 @@ Running on local URL: http://127.0.0.1:7860
 Open the link in your browser to start interacting with the chatbot.
 
 ---
+### Access the Gradio Interface
+
+After running the script, Gradio will provide a link, such as:
+
+Running on local URL: http://127.0.0.1:7860
+
+Open the link in your browser to start interacting with the chatbot.
+
+### Share the Interface Publicly
+
+If you'd like to share the chatbot interface with others, use Gradio's share=True option. For example:
+
+interface.launch(share=True)
+
+This will generate a public link that can be shared with others for remote access to your chatbot. Be cautious when sharing if the application processes sensitive data.
+
+Example Public Link
+
+When using share=True, Gradio will generate a public link similar to:
+
+https://your-gradio-chatbot-app.gradio.app
+
+You can share this link directly with others.
+You can access the Gradio interface via the following link:
+[Gradio Chatbot]( https://f855781982163b5e71.gradio.live)
 
 ## Usage Instructions
 
