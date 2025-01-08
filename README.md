@@ -8,8 +8,9 @@ This project implements a chatbot application powered by **LangGraph** and **Lan
 
 - **State Graph Management**: Uses LangGraph’s StateGraph to define and manage the flow of conversation.
 - **LLM Integration**: Powered by Groq's large language model (`Gemma2-9b-It`).
-- **Gradio Interface**: Offers an interactive web-based user interface with customizable styling.
 - **Exit Functionality**: Gracefully exits the chat session when the user types "quit", "q", or "exit".
+- **Gradio Interface**: Offers an interactive web-based user interface with customizable styling.
+
 
 ---
 
