@@ -338,21 +338,21 @@ This project implements a smart research assistant leveraging LangGraph, ChatGro
 
 ---
 
-## Future Improvements
+### Future Improvements
 - Enhance error handling for invalid or missing API keys.
 - Add support for additional tools beyond Tavily Search Results.
 - Optimize the assistant for low-latency responses.
 
 ---
 
-## License
+### License
 This project is provided as-is under the MIT License.
 
 ---
 
-## Acknowledgments
-- **LangChain**: For providing the foundational libraries.
-- **Tavily**: For the search tool integration.
-- **ChatGroq**: For the language model support.
+### Acknowledgments
 
+- [LangChain](https://www.langchain.com/): For providing the foundational libraries.  
+- [Tavily](https://tavily.com/): For the search tool integration.  
+- [ChatGroq](https://www.groq.com/): For the language model support.  
 
