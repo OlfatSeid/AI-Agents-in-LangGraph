@@ -190,8 +190,168 @@ This project was built using:
 - [Langchain Groq](https://github.com/langchain/langchain_groq)
 - [Gradio](https://www.gradio.app/)
 
+-------
+--------
+# README: LangGraph-Based Research Assistant with Tavily Search and ChatGroq
+
+## Overview
+This project implements a smart research assistant leveraging LangGraph, ChatGroq, and Tavily Search Results API. The assistant operates as a state machine using a state graph to manage the flow of tasks, integrating language model responses and tool invocations. It is capable of interacting with a search engine to retrieve information and respond to user queries dynamically.
+
+---
+
+## Key Features
+1. **StateGraph for Workflow Management**:
+   - The assistant uses LangGraph's `StateGraph` to define nodes and edges for decision-making and action execution.
+   - The graph alternates between language model responses and tool invocations based on the need for external actions.
+
+2. **Integration with Tavily Search Results**:
+   - The Tavily Search Results API is integrated for search-based tool functionality, allowing up to 4 results per query.
+
+3. **ChatGroq Language Model**:
+   - The assistant leverages ChatGroq with the `Gemma2-9b-It` model for generating responses and determining tool usage.
+
+4. **Dynamic Workflow**:
+   - Conditional edges within the graph allow the assistant to decide whether to take actions (invoke tools) or continue the conversation with the language model.
+
+5. **User-Defined Prompt**:
+   - A customizable system prompt ensures the assistant behaves as an intelligent research assistant.
+
+---
+
+## Prerequisites
+1. **Python Libraries**:
+   Ensure the following libraries are installed:
+   - `langgraph`
+   - `langchain_core`
+   - `langchain_community`
+   - `langchain_groq`
+   - `IPython`
+
+   Install any missing dependencies via:
+   ```bash
+   pip install langgraph langchain_core langchain_community langchain_groq IPython
+   ```
+
+2. **Environment Variables**:
+   - Set your Tavily and Groq API keys as environment variables.
+     ```python
+     from google.colab import userdata
+     tavily_api_key = userdata.get('tavily_api_key')
+     os.environ['TAVILY_API_KEY'] = tavily_api_key
+     groq_api_key = userdata.get('groq_api_key')
+     ```
+
+---
+
+## Code Explanation
+
+### Components
+
+#### 1. **StateGraph**
+- The assistant's workflow is managed by a `StateGraph` object.
+- Two nodes are defined:
+  - `llm`: Handles the language model's response generation.
+  - `action`: Executes tool invocations based on the language model's outputs.
+- Edges are configured to allow transitions between these states based on whether tools need to be invoked.
+
+#### 2. **Agent Class**
+- Encapsulates the functionality of the assistant.
+- Handles state transitions and tool invocations.
+- Core methods:
+  - `call_openai`: Sends messages to the language model (ChatGroq).
+  - `take_action`: Invokes tools based on the language model's outputs.
+
+#### 3. **TavilySearchResults Tool**
+- Integrated as a search tool.
+- Configured with a maximum of 4 search results per query.
+
+#### 4. **ChatGroq**
+- A language model used for response generation and determining tool usage.
+
+#### 5. **Custom Prompt**
+- The system prompt guides the assistant's behavior and ensures it operates as a research assistant.
+
+#### 6. **Graph Visualization**
+- The graph's workflow is visualized using `pygraphviz`.
+- Rendered as a PNG image with:
+  ```python
+  Image(abot.graph.get_graph().draw_png())
+  ```
+
+### Input/Output Example
+1. Input:
+   ```python
+   messages = [HumanMessage(content="What is the weather in sf?")]
+   result = abot.graph.invoke({"messages": messages})
+   print(result['messages'][-1].content)
+   ```
+2. Output:
+   - The assistant retrieves and displays weather information for San Francisco by using the Tavily search tool.
+
+---
+
+## How to Use
+
+1. **Set Up Environment**:
+   - Ensure all prerequisites are installed.
+   - Configure your Tavily and Groq API keys as environment variables.
+
+2. **Run the Code**:
+   - Copy the provided code into a Python environment or Jupyter Notebook.
+   - Execute the script to initialize the assistant.
+
+3. **Query the Assistant**:
+   - Send messages to the assistant using:
+     ```python
+     messages = [HumanMessage(content="Your Query Here")]
+     result = abot.graph.invoke({"messages": messages})
+     print(result['messages'][-1].content)
+     ```
+
+4. **Visualize Workflow**:
+   - Generate a PNG visualization of the assistant's workflow:
+     ```python
+     Image(abot.graph.get_graph().draw_png())
+     ```
+
+---
+
+## Troubleshooting
+
+1. **Tavily API Key Error**:
+   - Ensure your `TAVILY_API_KEY` is correctly set in the environment variables.
+   - Validate the key with the Tavily API.
+
+2. **Graph Rendering Error**:
+   - Install `pygraphviz` if not already installed:
+     ```bash
+     pip install pygraphviz
+     ```
+
+3. **Empty or Repeated Output**:
+   - Check the raw response content with:
+     ```python
+     print(repr(result['messages'][-1].content))
+     ```
+   - Sanitize the response if necessary.
+
+---
+
+## Future Improvements
+- Enhance error handling for invalid or missing API keys.
+- Add support for additional tools beyond Tavily Search Results.
+- Optimize the assistant for low-latency responses.
+
 ---
 
 ## License
-This project is licensed under the MIT License. 
+This project is provided as-is under the MIT License.
+
+---
+
+## Acknowledgments
+- **LangChain**: For providing the foundational libraries.
+- **Tavily**: For the search tool integration.
+- **ChatGroq**: For the language model support.
+
 
