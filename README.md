@@ -356,3 +356,143 @@ This project is provided as-is under the MIT License.
 - [Tavily](https://tavily.com/): For the search tool integration.  
 - [ChatGroq](https://www.groq.com/): For the language model support.  
 
+------------------------------
+-----------------------------
+#  Agentic Search vs. Regular Search
+
+This notebook provides a comparative exploration of regular and agentic search approaches. Depending on the use case—whether quick, structured answers or customizable web scraping—users can choose the method that best fits their needs.
+
+---
+
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Setup](#setup)
+4. [How It Works](#how-it-works)
+   - [Regular Search](#regular-search)
+   - [Agentic Search](#agentic-search)
+5. [Comparative Analysis](#comparative-analysis)
+6. [Example Usage](#example-usage)
+7. [Acknowledgments](#acknowledgments)
+
+---
+
+## Introduction
+This code illustrates two methods for querying and retrieving weather information for a specific location:
+
+1. **Regular Search**: Utilizes search engines like DuckDuckGo (via the `duckduckgo_search` library) to retrieve weather-related information from external websites.
+2. **Agentic Search**: Leverages the Tavily API to process queries and provide direct, structured answers through pre-trained AI models.
+
+---
+
+## Features
+- **Regular Search:**
+  - Web scraping with BeautifulSoup.
+  - Retrieves links from DuckDuckGo.
+  - Parses and cleans the content of a web page to extract relevant data.
+
+- **Agentic Search:**
+  - Uses the Tavily API to directly fetch structured, AI-driven results.
+  - Provides concise answers with context.
+
+---
+
+## Setup
+
+### Prerequisites
+1. Install required Python libraries:
+   ```bash
+   pip install requests beautifulsoup4 duckduckgo_search pygments
+   ```
+2. Ensure you have the Tavily API key configured in Google Colab:
+   ```python
+   from google.colab import userdata
+   tavily_api_key = userdata.get('tavily_api_key')
+   os.environ['TAVILY_API_KEY'] = tavily_api_key
+   ```
+3. Ensure internet access is enabled for web scraping and API calls.
+
+---
+
+## How It Works
+
+### Regular Search
+
+1. **Search Query Formation**: A query is constructed dynamically based on user input (e.g., the city name).
+   ```python
+   query = f"what is the current weather in {city}? Should I travel there today?"
+   ```
+
+2. **DuckDuckGo Search**: The `DDGS` library fetches search results.
+   ```python
+   results = ddg.text(query, max_results=6)
+   ```
+
+3. **Web Scraping**: The content of the first search result is scraped using BeautifulSoup to extract weather-related data.
+   ```python
+   response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+   soup = BeautifulSoup(response.text, 'html.parser')
+   ```
+
+4. **Content Cleaning**: The scraped content is cleaned and structured.
+   ```python
+   weather_data = "\n".join(tag.get_text(" ", strip=True) for tag in soup.find_all(['h1', 'h2', 'h3', 'p'])
+   ```
+
+### Agentic Search
+
+1. **API Query**: The Tavily API processes the query and returns structured results.
+   ```python
+   result = client.search(query, max_results=1)
+   data = result["results"][0]["content"]
+   ```
+
+2. **Structured Output**: The returned JSON content is formatted for better readability.
+   ```python
+   formatted_json = json.dumps(json.loads(data.replace("'", '"')), indent=4)
+   ```
+
+---
+
+## Comparative Analysis
+
+| Feature               | Regular Search                             | Agentic Search                                |
+|-----------------------|--------------------------------------------|-----------------------------------------------|
+| **Ease of Use**       | Requires parsing and cleaning raw content. | Provides structured and ready-to-use answers. |
+| **Accuracy**          | Relies on external sources and scraping.   | AI-driven, concise, and contextually accurate.|
+| **Speed**             | Dependent on web scraping and parsing.     | Faster due to API-based direct answers.       |
+| **Customization**     | Fully customizable scraping logic.         | Limited to the API’s capabilities.            |
+| **Dependency**        | Requires DuckDuckGo and BeautifulSoup.     | Requires Tavily API access.                   |
+
+---
+
+## Example Usage
+
+### Regular Search
+```python
+query = "what is the current weather in Egypt?"
+url = search(query)[0]
+soup = scrape_weather_info(url)
+print(weather_data)
+```
+
+### Agentic Search
+```python
+query = "what is the current weather in Egypt?"
+result = client.search(query, max_results=1)
+print(result["results"][0]["content"])
+```
+
+---
+
+## Acknowledgments
+- [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/): For HTML parsing and web scraping.
+- [DuckDuckGo Search](https://pypi.org/project/duckduckgo-search/): For accessing search engine results.
+- [Tavily API](https://tavily.com/): For providing structured, AI-driven search capabilities.
+- [Pygments](https://pygments.org/): For formatting JSON output.
+
+---
+
+## Conclusion
+This notebook provides a comparative exploration of regular and agentic search approaches. Depending on the use case—whether quick, structured answers or customizable web scraping—users can choose the method that best fits their needs.
+
