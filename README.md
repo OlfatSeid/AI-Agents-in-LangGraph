@@ -480,6 +480,4 @@ print(result["results"][0]["content"])
 
 ---
 
-## Conclusion
-This notebook provides a comparative exploration of regular and agentic search approaches. Depending on the use case—whether quick, structured answers or customizable web scraping—users can choose the method that best fits their needs.
 
