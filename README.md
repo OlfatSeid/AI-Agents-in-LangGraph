@@ -364,19 +364,6 @@ This notebook provides a comparative exploration of regular and agentic search a
 
 ---
 
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Features](#features)
-3. [Setup](#setup)
-4. [How It Works](#how-it-works)
-   - [Regular Search](#regular-search)
-   - [Agentic Search](#agentic-search)
-5. [Comparative Analysis](#comparative-analysis)
-6. [Example Usage](#example-usage)
-7. [Acknowledgments](#acknowledgments)
-
----
-
 ## Introduction
 This code illustrates two methods for querying and retrieving weather information for a specific location:
 
@@ -466,7 +453,7 @@ This code illustrates two methods for querying and retrieving weather informatio
 
 ---
 
-## Example Usage
+#### Example Usage
 
 ### Regular Search
 ```python
