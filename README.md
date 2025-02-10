@@ -482,6 +482,9 @@ print(result["results"][0]["content"])
 
 # AI Agent - Essay Writer
 
+![image](https://github.com/user-attachments/assets/b71a8208-6347-417f-8114-23aa0a3cc150)
+
+
 ## Overview
 AI Agent - Essay Writer is an intelligent essay-writing assistant that generates high-quality essays based on user-provided topics. It uses a stateful AI workflow powered by LangGraph and integrates with Groq's AI model for text generation and Tavily for research queries.
 
