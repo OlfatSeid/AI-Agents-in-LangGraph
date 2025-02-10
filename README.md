@@ -496,7 +496,7 @@ AI Agent - Essay Writer is an intelligent essay-writing assistant that generates
 ## Technologies Used
 - **Python** for scripting and workflow management.
 - **LangGraph** for managing AI agent states and workflow logic.
-- **Langchain-Groq** for AI-powered text generation.
+- **[ChatGroq](https://www.groq.com/)** for AI-powered text generation.
 - **Tavily API** for gathering relevant research.
 - **Gradio** for user-friendly web-based UI.
 
