@@ -186,7 +186,7 @@ Verify that the `state["messages"]` is correctly handled in the chatbot function
 
 ## Credits
 This project was built using:
-- [LangGraph](https://github.com/langgraph)
+- [LangGraph](https://langchain-ai.github.io/langgraph/)
 - [Langchain Groq](https://github.com/langchain/langchain_groq)
 - [Gradio](https://www.gradio.app/)
 
@@ -494,7 +494,7 @@ AI Agent - Essay Writer is an intelligent essay-writing assistant that generates
 - Interactive Gradio UI for easy usage.
 
 ## Technologies Used
-- **[LangGraph](https://github.com/langgraph)** for managing AI agent states and workflow logic.
+- **[LangGraph](https://langchain-ai.github.io/langgraph/)** for managing AI agent states and workflow logic.
 - **[ChatGroq](https://www.groq.com/)** for AI-powered text generation.
 - **[Tavily API](https://tavily.com/)** for gathering relevant research.
 - **[Gradio](https://www.gradio.app/)** for user-friendly web-based UI.
