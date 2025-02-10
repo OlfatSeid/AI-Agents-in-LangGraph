@@ -501,23 +501,9 @@ AI Agent - Essay Writer is an intelligent essay-writing assistant that generates
 - **Gradio** for user-friendly web-based UI.
 
 ## Installation
-1. Clone the repository:
-   ```bash
-   git clone <repository_url>
-   cd ai-agent-essay-writer
+
    ```
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Set up API keys as environment variables:
-   ```bash
-   export GROQ_API_KEY="your_groq_api_key"
-   export TAVILY_API_KEY="your_tavily_api_key"
-   ```
-4. Run the application:
-   ```bash
-   python app.py
+   !pip install -qU langchain_community langgraph langchain_groq tavily-python
    ```
 
 ## Usage
