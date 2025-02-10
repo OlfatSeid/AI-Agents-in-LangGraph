@@ -494,11 +494,10 @@ AI Agent - Essay Writer is an intelligent essay-writing assistant that generates
 - Interactive Gradio UI for easy usage.
 
 ## Technologies Used
-- **Python** for scripting and workflow management.
-- **LangGraph** for managing AI agent states and workflow logic.
+- **[LangGraph](https://github.com/langgraph)** for managing AI agent states and workflow logic.
 - **[ChatGroq](https://www.groq.com/)** for AI-powered text generation.
-- **Tavily API** for gathering relevant research.
-- **Gradio** for user-friendly web-based UI.
+- **[Tavily API](https://tavily.com/)** for gathering relevant research.
+- **[Gradio]( https://f855781982163b5e71.gradio.live)** for user-friendly web-based UI.
 
 ## Installation
 
