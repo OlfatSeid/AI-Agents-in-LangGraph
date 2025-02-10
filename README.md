@@ -480,4 +480,56 @@ print(result["results"][0]["content"])
 
 ---
 
+# AI Agent - Essay Writer
+
+## Overview
+AI Agent - Essay Writer is an intelligent essay-writing assistant that generates high-quality essays based on user-provided topics. It uses a stateful AI workflow powered by LangGraph and integrates with Groq's AI model for text generation and Tavily for research queries.
+
+## Features
+- Generates structured essay outlines.
+- Writes full essays based on outlines and user input.
+- Provides critique and recommendations for improvements.
+- Incorporates research-backed enhancements.
+- Uses a feedback loop to refine essay drafts.
+- Interactive Gradio UI for easy usage.
+
+## Technologies Used
+- **Python** for scripting and workflow management.
+- **LangGraph** for managing AI agent states and workflow logic.
+- **Langchain-Groq** for AI-powered text generation.
+- **Tavily API** for gathering relevant research.
+- **Gradio** for user-friendly web-based UI.
+
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone <repository_url>
+   cd ai-agent-essay-writer
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Set up API keys as environment variables:
+   ```bash
+   export GROQ_API_KEY="your_groq_api_key"
+   export TAVILY_API_KEY="your_tavily_api_key"
+   ```
+4. Run the application:
+   ```bash
+   python app.py
+   ```
+
+## Usage
+1. Open the Gradio UI in your browser.
+2. Enter an essay topic in the input box.
+3. Click the **Generate Essay** button.
+4. View and refine the generated essay in the output box.
+
+## Future Improvements
+- Implement support for multiple AI models.
+- Enhance UI with additional customization features.
+- Improve feedback mechanism for refining essay quality.
+---------------------------------------------------------------------------
+
 
