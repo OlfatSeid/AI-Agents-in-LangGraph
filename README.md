@@ -533,8 +533,9 @@ This notebook sets up an AI chatbot using  LangChain tools, and LangGraph to han
 
 Ensure you have Python installed, then install the required dependencies:
 
-``` python
-pip install arxiv wikipedia langchain-community langgraph langchain-groq```
+        ``` python
+     pip install arxiv wikipedia langchain-community langgraph langchain-groq
+     ```
 
 
 ## Graph Structure
