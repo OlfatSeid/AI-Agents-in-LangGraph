@@ -1,6 +1,6 @@
 # Chatbot with Integrated LLM and State Graph
 
-This project implements a chatbot application powered by **LangGraph** and **Langchain Groq**, using **Gradio** to provide a user-friendly interface. The chatbot utilizes a state graph to efficiently manage the flow of conversation and responds to user inputs by invoking a large language model (LLM).
+This notebook implements a chatbot application powered by **LangGraph** and **Langchain Groq**, using **Gradio** to provide a user-friendly interface. The chatbot utilizes a state graph to efficiently manage the flow of conversation and responds to user inputs by invoking a large language model (LLM).
 
 ---
 
@@ -345,11 +345,6 @@ This project implements a smart research assistant leveraging LangGraph, ChatGro
 
 ---
 
-### License
-This project is provided as-is under the MIT License.
-
----
-
 ### Acknowledgments
 
 - [LangChain](https://www.langchain.com/): For providing the foundational libraries.  
@@ -520,4 +515,31 @@ AI Agent - Essay Writer is an intelligent essay-writing assistant that generates
 - Improve feedback mechanism for refining essay quality.
 ---------------------------------------------------------------------------
 
+# Chatbot with Arxiv and WikipediaTools
+This notebook sets up an AI chatbot using  LangChain tools, and LangGraph to handle queries using an LLM and external data sources like Wikipedia and Arxiv.
 
+## Features
+
+- LLM Integration: Uses ChatGroq with the `Gemma2-9b-It` model.
+
+- Arxiv and Wikipedia Queries: Fetches summarized information from Arxiv and Wikipedia.
+
+- Graph-based Execution: Implements LangGraph to manage AI agent interactions.
+
+- Visualization: Generates a flowchart of the chatbot's logic.
+
+  Installation
+
+Ensure you have Python installed, then install the required dependencies:
+
+``` pip install arxiv wikipedia langchain-community langgraph langchain-groq```
+
+
+## Graph Structure
+
+- chatbot: Processes user messages using an LLM.
+
+- tools: Handles external API calls (Arxiv, Wikipedia).
+
+- Edges & Conditions: Defined to manage flow between nodes
+------------------------------------------------------------------------------------------------
