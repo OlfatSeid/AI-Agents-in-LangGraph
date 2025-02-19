@@ -191,8 +191,8 @@ This project was built using:
 - [Langchain Groq](https://github.com/langchain/langchain_groq)
 - [Gradio](https://www.gradio.app/)
 
----------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------
+-----------------------------------------------------
+-----------------------------------------------------
 # AI Agent with Tavily Search
 ![image](https://github.com/user-attachments/assets/221cee53-d50e-406a-b83d-694496bdf25f)
 
