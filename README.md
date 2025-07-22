@@ -546,3 +546,26 @@ Ensure you have Python installed, then install the required dependencies:
 
 - Edges & Conditions: Defined to manage flow between nodes
 ----------------------------------------------------------------
+# Mail Sorting Butler
+This system automatically processes event invitations for Bruce Wayne using AI classification and response generation, maintaining his public persona while efficiently handling his busy schedule.
+
+Features
+🎯 AI-powered classification of event invitations
+
+✍️ Automated RSVP drafting tailored to Bruce Wayne's persona
+
+🚫 Spam detection to filter irrelevant invitations
+
+📊 Priority-based handling of incoming requests
+
+⚙️ Modular workflow using LangGraph state machines
+
+How It Works
+
+graph LR
+    A[Process Invitation] --> B[Classify Event]
+    B -->|Not Spam| C[Draft RSVP]
+    B -->|Spam| D[Handle Spam]
+    C --> E[Notify Bruce]
+    E --> F[END]
+    D --> F
