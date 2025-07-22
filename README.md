@@ -562,10 +562,23 @@ Features
 
 How It Works
 
-graph LR
-    A[Process Invitation] --> B[Classify Event]
-    B -->|Not Spam| C[Draft RSVP]
-    B -->|Spam| D[Handle Spam]
-    C --> E[Notify Bruce]
-    E --> F[END]
-    D --> F
+-  Process Invitation: Initial email ingestion
+
+-  Classify Event: Determine event type, priority, and sender importance
+
+-  Draft RSVP: Generate context-appropriate response
+
+-  Handle Spam: Filter out irrelevant invitations
+
+-  Notify Bruce: Present final results
+
+
+###  Create virtual environment
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate    # Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+![Invitation Processing Workflow](./images/workflow.png)
