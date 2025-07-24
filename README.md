@@ -581,4 +581,4 @@ venv\Scripts\activate    # Windows
 # Install dependencies
 pip install -r requirements.txt
 
-![Invitation Processing Workflow](./images/workflow.png)
+
